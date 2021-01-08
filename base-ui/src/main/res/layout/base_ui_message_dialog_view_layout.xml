@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <com.cj.ui.widget.roundshape.RoundLinearLayout
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:orientation="vertical"
+        app:rv_cornerRadius="8dp"
+        android:minHeight="115dp"
+        app:rv_backgroundColor="@color/color_white"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="温馨提示"
+            android:textColor="#171725"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="申请已提交，请等待审核"
+            android:textColor="@color/color_333333"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:background="#ebebeb"
+            android:layout_width="match_parent"
+            android:layout_height="1px"/>
+
+
+        <TextView
+            android:id="@+id/tv_confirm_btn"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/color_theme_start"
+            android:textSize="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp" />
+
+    </com.cj.ui.widget.roundshape.RoundLinearLayout>
+
+
+</RelativeLayout>

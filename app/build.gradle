@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+kapt{
+    arguments{
+        arg("MODULE_NAME", project.getName())
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.cj.pure"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.appVersionCode
+        versionName rootProject.ext.appVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi-v7a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaVersion
+        targetCompatibility rootProject.ext.javaVersion
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+    }
+
+
+}
+
+repositories {
+    flatDir {
+        dirs 'libs', '../base-foundation/libs'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$rootProject.ext.core_ktx_version"
+    implementation project(':base-foundation')
+    implementation project(':fun-compressor')
+    implementation project(':fun-editor')
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    kapt project(':core-processor')
+    kapt "com.alibaba:arouter-compiler:${rootProject.ext.arouterCompilierVersion}"
+    testImplementation "junit:junit:$rootProject.ext.junit_junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.ext.ext_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.espresso_core_versino"
+}

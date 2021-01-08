@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$rootProject.ext.core_ktx_version"
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.appCompatVersion"
+
+
+    api "androidx.multidex:multidex:$rootProject.ext.multidexVersion"
+    api "com.alibaba:arouter-api:${rootProject.ext.arouterApiVersion}"
+    api "com.tencent:mmkv-static:${rootProject.ext.mmkvVersion}"
+    api "com.orhanobut:logger:${rootProject.ext.loggerVersion}"
+    api "androidx.lifecycle:lifecycle-livedata:${rootProject.ext.liveDataVersion}"
+    api "io.reactivex.rxjava3:rxjava:$rootProject.ext.rxJavaVersion"
+    api "io.reactivex.rxjava3:rxandroid:$rootProject.ext.rxAndroidVersion"
+    api "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    api "com.squareup.okhttp3:okhttp:${rootProject.ext.okHttpVersion}"
+    api "com.squareup.okhttp3:logging-interceptor:${rootProject.ext.okHttpLoggingInterceptorVersion}"
+    api "com.squareup.retrofit2:adapter-rxjava3:${rootProject.ext.adapter_rxJava2Version}"
+    api "com.squareup.retrofit2:converter-gson:${rootProject.ext.converter_gsonVersion}"
+    api "com.google.code.gson:gson:${rootProject.gsonVersion}"
+    api "com.hjq:toast:${rootProject.ext.toastVersion}"
+    api "com.github.bumptech.glide:glide:${rootProject.ext.glideVersion}"
+    kapt "com.github.bumptech.glide:compiler:${rootProject.ext.glideVersion}"
+
+    api "org.apache.commons:commons-lang3:${rootProject.ext.commons_Lang_3_Version}"
+
+    //协程核心库
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
+    //协程android平台库
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutine_version"
+
+
+    implementation project(':base-ui')
+    api project(':core-annotation')
+
+
+    testImplementation "junit:junit:$rootProject.ext.junit_junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.ext.ext_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.espresso_core_versino"
+}

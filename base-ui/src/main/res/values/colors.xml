@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--主题色 start 、center 、end 由浅到深-->
+    <color name="color_theme_start">#FF6A00</color>
+    <color name="color_theme_center">#FF5A00</color>
+    <color name="color_theme_end">#FF3C05</color>
+
+    <color name="color_1c1c1c">#1c1c1c</color>
+    <color name="color_888888">#888888</color>
+    <color name="color_727171">#727171</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_ff5555">#FF5555</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_black">#000000</color>
+    <color name="color_4a4a4a">#4a4a4a</color>
+    <color name="color_white_bg">#fbfbfb</color><!--页面白底背景-->
+
+    <color name="picture_color_80">#80000000</color>
+    <color name="color_171725">#171725</color>
+    <color name="color_92929d">#92929D</color>
+
+    <color name="color_8F92A1">#8F92A1</color>
+    <color name="color_1E1F20">#1E1F20</color>
+    <color name="color_2f2f2f">#2F2F2F</color>
+    <color name="color_FF1E1F20">#FF1E1F20</color>
+    <color name="color_FF000000">#FF000000</color>
+    <color name="color_RED">#E53935</color>
+    <color name="color_bdbdbd">#bdbdbd</color>
+</resources>

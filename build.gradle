@@ -1,0 +1,109 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.gradle_version = "4.0.1"
+    ext.kotlin_version = "1.4.21"
+    ext.kotlin_coroutine_version = "1.3.9"
+    repositories {
+        //阿里云镜像
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradle_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        //阿里云镜像
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext{
+
+    /***app version***/
+    appVersionCode = 1
+    appVersionName = "1.0.0"
+
+
+    /***Sdk & tools***/
+    compileSdkVersion = 30
+    buildToolsVersion = "29.0.3"
+    minSdkVersion = 21
+    targetSdkVersion = 30
+
+    javaVersion = JavaVersion.VERSION_1_8
+
+    multidexVersion = "2.0.1"
+    appCompatVersion = "1.2.0"
+
+    materialVersion = "1.0.0"
+    liveDataVersion = "2.0.0"
+    recyclerViewVersion = "1.1.0"
+
+    /***Kotlin version**/
+    core_ktx_version = "1.3.1"
+
+    /***third party version***/
+    okHttpVersion = "4.9.0"
+    okHttpLoggingInterceptorVersion = "4.9.0"
+
+    retrofitVersion = "2.9.0"
+    adapter_rxJava2Version = "2.9.0"
+    converter_gsonVersion = "2.9.0"
+    rxJavaVersion = "3.0.6"
+    rxAndroidVersion = "3.0.0"
+    gsonVersion = "2.8.6"
+    toastVersion = "8.6"
+
+    arouterApiVersion = "1.5.0"
+    arouterCompilierVersion = "1.2.2"
+
+    mmkvVersion = "1.2.2"
+
+    liveDataVersion = "2.2.0"
+
+    kotlinPoetVersion = "1.5.0"
+
+    materialVersion="1.1.0"
+
+    constraintLayoutVersion = "1.1.3"
+
+    loggerVersion = "2.2.0"
+
+    glideVersion = "4.11.0"
+
+    commons_Lang_3_Version = "3.7"
+
+
+    /***test framework version***/
+    junit_junit_version = "4.13"
+    ext_junit_version = "1.1.2"
+    espresso_core_versino = "3.3.0"
+
+}

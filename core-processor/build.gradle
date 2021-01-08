@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.ext.kotlin_version"
+    implementation project(':core-annotation')
+    implementation "com.squareup:kotlinpoet:${rootProject.ext.kotlinPoetVersion}"
+    implementation "com.google.code.gson:gson:${rootProject.gsonVersion}"
+
+}
+
+sourceCompatibility = rootProject.ext.javaVersion
+targetCompatibility = rootProject.ext.javaVersion

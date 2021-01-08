@@ -1,0 +1,8 @@
+include ':fun-editor'
+include ':fun-compressor'
+include ':core-processor'
+include ':core-annotation'
+include ':base-ui'
+include ':base-foundation'
+include ':app'
+rootProject.name = "PURE"
