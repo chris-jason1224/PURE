@@ -1,4 +1,5 @@
 *.iml
+*.idea/
 .gradle
 /local.properties
 /.idea/caches
@@ -12,3 +13,9 @@
 /captures
 .externalNativeBuild
 .cxx
+app/build
+base-foundation/build
+base-ui/build
+core-annotation/build
+coer-processor/build
+fun-editor/build
